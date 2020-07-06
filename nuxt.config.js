@@ -1,4 +1,7 @@
 
+require('dotenv').config();
+const { MOVIEDB_KEY } = process.env;
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -53,6 +56,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
@@ -64,5 +68,8 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+  },
+  env: {
+    MOVIEDB_KEY: process.env.MOVIEDB_KEY
   }
 }

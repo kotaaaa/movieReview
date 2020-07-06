@@ -16,7 +16,7 @@ export default {
   } ,
   methods: {
     async getIp(){
-      this.ip = await this.$axios.$get('https://api.themoviedb.org/3/movie/now_playing?api_key=0534930d6692ebb101db3214a44bcfe7')  
+      this.ip = await this.$axios.$get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.MOVIEDB_KEY}`);
     }
   }
 }
